@@ -1,12 +1,27 @@
 // No tenemos una clase. Como es posible? Utilicemos un decompilador.
+using Microsoft.AspNetCore.Http.Json;
 using Microsoft.EntityFrameworkCore;
 using NetCoreCourse.FirstExample.WebApp.Configuration;
 using NetCoreCourse.FirstExample.WebApp.DataAccess;
 using NetCoreCourse.FirstExample.WebApp.Services;
+using System.Security.Cryptography.Xml;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
-//Agregamos las paginas de Razon. Que son? Las vamos a ver en el modulo de MVC.
+//Agregamos las paginas de Razor. Que son? Las vamos a ver en el modulo de MVC.
 builder.Services.AddRazorPages();
+
+//Lo vamos a ver en el Modulo de EF Core
+//Agregamos controllers y configuramos el serializador de JSON.
+// Esta configuracion de Ignorar Ciclos solo debemos realizarlo ya que utilizamos las entidades de EF Core como respuesta de la API. 
+// Normalmente no lo necesitariamos.
+builder.Services.AddControllers()
+    .AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    }   
+) ;
 
 //Agregando el primer objeto de configuracion.
 var firstConfigurationObject = builder.Configuration.GetSection("FirstConfiguration");

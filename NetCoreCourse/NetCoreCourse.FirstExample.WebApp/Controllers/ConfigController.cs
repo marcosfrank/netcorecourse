@@ -7,7 +7,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
     [Route("api/[controller]")]
     public class ConfigController : ControllerBase
     {
-        private readonly FirstConfigurationOptions configuration; //This is what we usually use.
+        private readonly FirstConfigurationOptions configuration;
 
         public ConfigController(IOptions<FirstConfigurationOptions> options)
 
@@ -18,8 +18,8 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
         [HttpGet]
         public IActionResult Config()
         {
-            //Where does 'overwritten string' comes?
-            //Which is our current environment?
+            //De donde viene el valor de 'overwritten string'?
+            //Cual es nuestro ambiente actual?
             return Ok(configuration);
         }
     }

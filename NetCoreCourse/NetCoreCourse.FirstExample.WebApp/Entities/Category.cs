@@ -10,7 +10,6 @@ namespace NetCoreCourse.FirstExample.WebApp.Entities
         //Esta lista es lo unico que necesitamos para que EF CORE entienda que la relacion entre categoria y cosas
         // es 1:N. Es una de las muchas convenciones que tiene EF CORE para representar este tipo de relaciones. 
         // Siempre que sea necesario, se pueden reemplazar estas convenciones configurando las relaciones en el DbContext.
-        [JsonIgnore] //Este atributo se utiliza para que la propiedad things no sea utilizada a la hora de parsear objetos a JSON.
         public IList<Thing> Things { get; set; }
     }
 }

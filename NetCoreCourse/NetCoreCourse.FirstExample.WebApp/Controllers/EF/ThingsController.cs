@@ -22,5 +22,25 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
 
             return thing; //Observar que devuelve el ID. Como es posible?
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public ActionResult Remove(int id)
+        {
+            var cat = thingsContext.Things.Find(id);
+            if(cat is null)
+                return NotFound();
+
+            thingsContext.Things.Remove(cat);
+            thingsContext.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpGet]
+        public ActionResult<List<Thing>> GetAll()
+        {
+            return thingsContext.Things.ToList();
+        }
     }
 }
