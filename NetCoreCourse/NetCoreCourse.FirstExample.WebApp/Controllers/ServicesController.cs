@@ -39,7 +39,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
         [HttpGet("random")]
         public IActionResult RandomValue()
         {
-            //Check the difference between the responses. Can you spot when the values change?
+            //Observar la diferencia entre las respuestas. Podes determinar cuando los valores cambiaron?
             var fromController = new RandomServiceValues
             {
                 Transient = transientService.RandomValue,

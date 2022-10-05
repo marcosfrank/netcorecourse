@@ -114,5 +114,34 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
 
             return thingsContext.Categories.First(); 
         }
+
+        [HttpGet]
+        [Route("rawsql")]
+        public List<Category> RawSql()
+        {
+            return thingsContext
+                .Categories
+                .FromSqlRaw("SELECT Id, Description FROM Categories")
+                .ToList();
+        }
+
+        [HttpGet]
+        [Route("storedprocedure")]
+        public List<Category> FromStoredProcedure()
+        {
+            //Normalmente la creacion y actualizacion de Stored Procedures son parte de migraciones.
+            /*
+             CREATE OR ALTER PROCEDURE GetCategories AS
+            BEGIN
+	            SELECT Id, Description FROM Categories;
+            END;
+             
+             */
+
+            return thingsContext
+                    .Categories
+                    .FromSqlRaw($"GetCategories")
+                    .ToList();
+        }
     }
 }
