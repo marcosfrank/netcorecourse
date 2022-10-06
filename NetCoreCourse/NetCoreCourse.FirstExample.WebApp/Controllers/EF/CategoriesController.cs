@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using NetCoreCourse.FirstExample.WebApp.DataAccess;
 using NetCoreCourse.FirstExample.WebApp.Entities;
@@ -127,20 +128,29 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
 
         [HttpGet]
         [Route("storedprocedure")]
-        public List<Category> FromStoredProcedure()
+        public List<Category> FromStoredProcedure(string description)
         {
             //Normalmente la creacion y actualizacion de Stored Procedures son parte de migraciones.
             /*
-             CREATE OR ALTER PROCEDURE GetCategories AS
+             CREATE OR ALTER PROCEDURE GetCategories 
+	            @Description nvarchar(100) = NULL
+             AS
             BEGIN
-	            SELECT Id, Description FROM Categories;
+	            SELECT Id, [Description] FROM Categories
+	            WHERE @Description IS NULL
+	            OR [Description] = @Description;
             END;
              
              */
 
+            object parameterValue = string.IsNullOrWhiteSpace(description)?
+                                            DBNull.Value :
+                                            description;
+            var sqlParameter = new SqlParameter[] { new SqlParameter("Description", parameterValue) };
+
             return thingsContext
                     .Categories
-                    .FromSqlRaw($"GetCategories")
+                    .FromSqlRaw($"GetCategories @Description", sqlParameter)
                     .ToList();
         }
     }
