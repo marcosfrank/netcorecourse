@@ -36,12 +36,12 @@ builder.Services.AddScoped<IScopedRandomValueService, RandomValueService>();
 builder.Services.AddSingleton<ISingletonRandomValueService, RandomValueService>();
 
 //Lo vamos a ver en el Modulo de EF Core
-builder.Services.AddDbContext<ThingsContext>(options =>
-{
-    //Para poder utilizar SqlServer necesitamos instalar el paquete
-    //Microsoft.EntityFrameworkCore.SqlServer
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ThingsContextConnection"));
-});
+//builder.Services.AddDbContext<ThingsContext>(options =>
+//{
+//    //Para poder utilizar SqlServer necesitamos instalar el paquete
+//    //Microsoft.EntityFrameworkCore.SqlServer
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("ThingsContextConnection"));
+//});
 
 //Creando la aplicacion.
 var app = builder.Build();
