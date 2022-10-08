@@ -36,12 +36,12 @@ builder.Services.AddScoped<IScopedRandomValueService, RandomValueService>();
 builder.Services.AddSingleton<ISingletonRandomValueService, RandomValueService>();
 
 //Lo vamos a ver en el Modulo de EF Core
-//builder.Services.AddDbContext<ThingsContext>(options =>
-//{
-//    //Para poder utilizar SqlServer necesitamos instalar el paquete
-//    //Microsoft.EntityFrameworkCore.SqlServer
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("ThingsContextConnection"));
-//});
+builder.Services.AddDbContext<ThingsContext>(options =>
+{
+    //Para poder utilizar SqlServer necesitamos instalar el paquete
+    //Microsoft.EntityFrameworkCore.SqlServer
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ThingsContextConnection"));
+});
 
 //Creando la aplicacion.
 var app = builder.Build();
@@ -50,15 +50,16 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
+    //app.UseHsts(); // Retorna un header que le dice a los clientes que siempre intenten realizar el primer request con HTTPS.
+    // El metodo anterior no es recomendado para ambientes NO productivos ya que son cacheados por los navegadores.
 }
 //Probando nuevos ambientes.
 if (app.Environment.IsEnvironment("MarcosDev"))
 {
     app.Logger.LogInformation("Este es el ambiente de Marcos.");
 }
-//TODO TODO TODO Check this ---> Funciona pero ver la diferencia entre uno y el otro
-//app.UseHsts(); // It returns a header that tells the browser to always try to do the first request over HTTPS.
-//app.UseHttpsRedirection();
+
+//app.UseHttpsRedirection(); //Redirecciona cualquier request HTTP a HTTPS
 
 app.UseStaticFiles(); //img/logo.jpg
 
