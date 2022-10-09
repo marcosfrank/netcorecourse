@@ -46,16 +46,16 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             Console.WriteLine(b2.Age); //0 -> Asigna los valores por defecto
             Console.WriteLine(c2.Name); //null -> Asigna los valores por defecto
 
-            // Immutability
+            // Inmutabilidad (Immutability)
             //a.Age = 15; //Compile error
             b.Age = 15; //Because Record Structs are not immutable by default
             //c.Age = 15; //Compile error
 
-            //Shallow Immutability
+            // Inmutabilidad "Superficial" (Shallow Immutability)
             a.C.Prop = 1; // 
             c.C.Prop = 1; // 
 
-            //Value-Equality
+            // Igualdad por valor (Value-Equality)
             var a3 = new RecordClass("a", 10, ccForA);
             var b3 = new RecordStruct("b", 15, new ComplexClass(1));
             var c3 = new RecordStructRO("c", 5, new ComplexClass(1));
@@ -66,7 +66,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             Console.WriteLine(c == c3b); //true
             Console.WriteLine(new ComplexClass(2) == new ComplexClass(2)); // false
 
-            //usage With 
+            //Como se utiliza With 
             var a4 = a3 with { Age = 200 };
             var b4 = b3 with { C = new ComplexClass(7) };
             var c4 = c3 with { Name = "new instance" };
@@ -79,7 +79,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             Console.WriteLine(structb); //Full-Qualified Type -> No tenemos traduccion al español o Nombre totalmente calificado??
 
             Console.WriteLine(b5 == b3); //
-            //Console.WriteLine(structb == structb); //ERROR == is not implemented.
+            //Console.WriteLine(structb == structb); //ERROR == no esta implementado
         }
 
         public struct StructB
@@ -95,7 +95,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             public ComplexClass C { get; set; }
         }
 
-        //Record class can inherit, Record Structs No
+        //Record class permite herencia, Record Structs No
         public record RecordChild(string Name, int Age, ComplexClass C, String extra) : RecordClass(Name, Age, C);
         //public record RecordChildStruct(string Name, int Age, ComplexClass C, String extra) : RecordC(Name, Age, C); //ERROR
     }

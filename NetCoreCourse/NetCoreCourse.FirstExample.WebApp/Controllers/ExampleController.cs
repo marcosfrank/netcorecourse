@@ -2,8 +2,9 @@
 
 namespace NetCoreCourse.FirstExample.WebApp.Controllers
 {
-    //Check that we need to inherit from ControllerBase
-    [Route("api/[controller]")] //This decorator allow UseRouting Middleware to find this endpoint.
+    
+    [Route("api/[controller]")] //Este decorador permite que el Middleware UseRouting pueda encontrar este endpoint.
+    //Mira! Estamos heredando de ControllerBase
     public class ExampleController : ControllerBase
     {
         [HttpGet]

@@ -12,10 +12,10 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             string cuil1 = "20307507508";
             string cuil2 = "2030750708";
 
-            var formattedCuil1 = cuil1.ToCUILFormat(); //calling directly from string
+            var formattedCuil1 = cuil1.ToCUILFormat(); //Llamo al metodo desde un string directamente.
             var formattedCuil2 = cuil2.ToCUILFormat();
 
-            var is8Even = 8.IsEven(); //calling directly from int. Even a constant.
+            var is8Even = 8.IsEven(); //Llamo al metodo desde un entero directamente. Incluso si es una constante.
             var is11Even = 11.IsEven();
             var is15Odd = 15.IsOdd();
 
@@ -26,7 +26,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
                 is11Even,
                 is15Odd
             });
-            //What kind of class is this one ^^^^?
+            //Que tipo es este ^^^^? 
         }
     }
 }
