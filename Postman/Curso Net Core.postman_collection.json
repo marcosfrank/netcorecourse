@@ -117,27 +117,6 @@
 					"response": []
 				},
 				{
-					"name": "/config/interfaces",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/config/interfaces",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"config",
-								"interfaces"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "/services/forecast",
 					"request": {
 						"method": "GET",
@@ -180,6 +159,69 @@
 								"api",
 								"services",
 								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/generics/lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44382/api/generic/lists",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"generic",
+								"lists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/generics/swap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44382/api/generic/swap",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"generic",
+								"swap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/generics/class",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44382/api/generic/class",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"generic",
+								"class"
 							]
 						}
 					},
