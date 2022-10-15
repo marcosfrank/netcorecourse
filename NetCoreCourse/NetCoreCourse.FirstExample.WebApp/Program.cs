@@ -1,6 +1,14 @@
 // No tenemos una clase. Como es posible? Utilicemos un decompilador.
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.Json;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using NetCoreCourse.FirstExample.WebApp.Configuration;
+using NetCoreCourse.FirstExample.WebApp.DataAccess;
+using NetCoreCourse.FirstExample.WebApp.Handlers;
 using NetCoreCourse.FirstExample.WebApp.Services;
+using System.Security.Cryptography.Xml;
+using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,9 +27,33 @@ builder.Services.AddControllers()
     }
 );
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey
+        (Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = false,
+        ValidateIssuerSigningKey = true
+    };
+});
+
+builder.Services.AddAuthorization();
+
 //Agregando el primer objeto de configuracion.
 var firstConfigurationObject = builder.Configuration.GetSection("FirstConfiguration");
 builder.Services.Configure<FirstConfigurationOptions>(firstConfigurationObject);
+//Agregando configuracion para JWT
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JWT"));
 
 // Agregamos los servicios al contenedor de dependencias
 builder.Services.AddTransient<IForecastService, ForecastService>();
@@ -30,6 +62,8 @@ builder.Services.AddTransient<IServiceUsingServices, ServiceUsingServices>();
 builder.Services.AddTransient<ITransientRandomValueService, RandomValueService>();
 builder.Services.AddScoped<IScopedRandomValueService, RandomValueService>();
 builder.Services.AddSingleton<ISingletonRandomValueService, RandomValueService>();
+
+builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 
 //Lo vamos a ver en el Modulo de EF Core
 //builder.Services.AddDbContext<ThingsContext>(options =>
@@ -61,6 +95,7 @@ app.UseStaticFiles(); //img/logo.jpg
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
