@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NetCoreCourse.FirstExample.WebApp.Configuration;
 using NetCoreCourse.FirstExample.WebApp.DataAccess;
+using NetCoreCourse.FirstExample.WebApp.Filters;
 using NetCoreCourse.FirstExample.WebApp.Handlers;
 using NetCoreCourse.FirstExample.WebApp.Services;
 using System.Security.Cryptography.Xml;
@@ -19,13 +20,14 @@ builder.Services.AddRazorPages();
 //Agregamos controllers y configuramos el serializador de JSON.
 // Esta configuracion de Ignorar Ciclos solo debemos realizarlo ya que utilizamos las entidades de EF Core como respuesta de la API.
 // Normalmente no lo necesitariamos.
-builder.Services.AddControllers()
-    .AddJsonOptions(x =>
-    {
-        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
-    }
-);
+builder.Services.AddControllers(options => {
+    options.Filters.Add<NetCoreCourseFilter>();
+})
+.AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+});
 
 //Modulo API
 //builder.Services.AddSwaggerGen();
