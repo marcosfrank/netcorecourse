@@ -11,7 +11,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Filters
             this.logger = loggerFactory.CreateLogger("NetCoreCourse");
         }
 
-        public void OnActionExecuting(ActionExecutingContext context)
+        public void OnActionExecuting(ActionExecutingContext context)// Veamos todas las propiedades que tiene este context.
         {
             //Antes de que llegue a la accion del controller
             //logger.LogInformation("SE esta ejecutando nuestro filtro.");
