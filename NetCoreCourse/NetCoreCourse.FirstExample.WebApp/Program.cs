@@ -27,6 +27,9 @@ builder.Services.AddControllers()
     }
 );
 
+//Modulo API
+//builder.Services.AddSwaggerGen();
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -58,6 +61,7 @@ builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JWT"));
 // Agregamos los servicios al contenedor de dependencias
 builder.Services.AddTransient<IForecastService, ForecastService>();
 builder.Services.AddTransient<IServiceUsingServices, ServiceUsingServices>();
+builder.Services.AddTransient<IMinimalApiService, MinimalApiService>();
 
 builder.Services.AddTransient<ITransientRandomValueService, RandomValueService>();
 builder.Services.AddScoped<IScopedRandomValueService, RandomValueService>();
@@ -95,12 +99,20 @@ app.UseStaticFiles(); //img/logo.jpg
 
 app.UseRouting();
 
+//Modulo API
+//app.UseSwagger();
+//app.UseSwaggerUI();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
 //Definicion de "Minimal API". Mas info en: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0
 app.MapGet("/api/firstapi", () => "Hey here is your first API!");
+
+app.MapPost("/api/minimalapi", (object request, IMinimalApiService service) => {
+    return service.Execute(request);
+});
 
 app.MapControllerRoute(
        name: "default",
