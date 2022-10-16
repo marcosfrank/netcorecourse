@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace NetCoreCourse.FirstExample.WebApp.Filters
 {
@@ -15,6 +16,11 @@ namespace NetCoreCourse.FirstExample.WebApp.Filters
         {
             //Antes de que llegue a la accion del controller
             //logger.LogInformation("SE esta ejecutando nuestro filtro.");
+            // Que pasa si seteamos el Result del context???
+            //context.Result = new ContentResult
+            //{
+            //    Content = "Short-circuit"
+            //};
         }
 
         public void OnActionExecuted(ActionExecutedContext context)
