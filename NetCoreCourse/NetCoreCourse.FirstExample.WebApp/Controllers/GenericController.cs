@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NetCoreCourse.FirstExample.WebApp.Controllers.ToRemove;
 using NetCoreCourse.FirstExample.WebApp.Dto;
 using NetCoreCourse.FirstExample.WebApp.Handlers;
 
@@ -10,22 +11,28 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
         [HttpGet("lists")]
         public IActionResult ListUsage() //Ver la clase transporte.
         {
-            var list = new List<Transport> {
-                new Plane {
-                    Model = "Airbus A320",
-                    TurbineAmount = 2
-                },
-                new Plane {
-                    Model = "Boeing 747",
-                    TurbineAmount = 4
-                },
-                new Car {
-                    Model= "Chevrolet Corsa",
-                    HasSolarRoof = false,
-                }
+            var list2 = new List<Transport>();
+            var plane = new Plane();
+            plane.Model = "Airbus A320";
+            plane.TurbineAmount = 2;
+            var plane2 = new Plane
+            {
+                Model = "Boeing 747",
+                TurbineAmount = 4
+            };
+            var car1 = new Car
+            {
+                Model = "Chevrolet Corsa",
+                HasSolarRoof = false,
             };
 
-            return Ok(list);
+            list2.Add(plane);
+            list2.Add(plane2);
+            list2.Add(car1);
+
+
+
+            return Ok(list2);
         }
 
         [HttpGet("swap")]
@@ -37,6 +44,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             b = 20;
             c = 'I';
             d = 'V';
+            var s = "";
 
             Swap<int>(ref a, ref b);
             Swap<char>(ref c, ref d);
@@ -57,7 +65,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
         {
             var intSpec = new SpecificationHandler<int>().GetSpecification(10);
             var charSpec = new SpecificationHandler<char>().GetSpecification('d');
-            //var stringSpec = new SpecificationHandler<string>().GetSpecification(15); //POrque no compila esta linea?
+            //var stringSpec = new SpecificationHandler<string>().GetSpecification(15); //Porque no compila esta linea?
 
             var transportSpec1 = new SpecificationHandler<Transport>().GetSpecification(new Plane());
             var transportSpec2 = new SpecificationHandler<Transport>().GetSpecification(new Car());

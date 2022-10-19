@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using NetCoreCourse.FirstExample.WebApp.Configuration;
 
 namespace NetCoreCourse.FirstExample.WebApp.Controllers
 {
@@ -7,6 +9,14 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
     //Mira! Estamos heredando de ControllerBase
     public class ExampleController : ControllerBase
     {
+
+        private readonly CursoNetCoreOptions configuration;
+
+        public ExampleController(IOptions<CursoNetCoreOptions> options)
+
+        {
+            configuration = options?.Value ?? throw new ArgumentNullException("FirstConfigurationOptions was not properly set.");
+        }
         [HttpGet]
         public IActionResult Hey()
         {
@@ -16,7 +26,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
         [HttpGet("another")]
         public IActionResult AnotherHey()
         {
-            return Ok("Hey Este es otra accion de tu controlador.");
+            return Ok(configuration);
         }
     }
 }

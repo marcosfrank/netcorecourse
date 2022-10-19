@@ -22,12 +22,15 @@ builder.Services.AddControllers()
 //Agregando el primer objeto de configuracion.
 var firstConfigurationObject = builder.Configuration.GetSection("FirstConfiguration");
 builder.Services.Configure<FirstConfigurationOptions>(firstConfigurationObject);
+var cursoSection = builder.Configuration.GetSection("CursoNetCore");
+builder.Services.Configure<CursoNetCoreOptions>(cursoSection);
 
 // Agregamos los servicios al contenedor de dependencias
 builder.Services.AddTransient<IForecastService, ForecastService>();
 builder.Services.AddTransient<IServiceUsingServices, ServiceUsingServices>();
 
 builder.Services.AddTransient<ITransientRandomValueService, RandomValueService>();
+builder.Services.AddTransient<IExcerciseService, ExcerciseService>();
 builder.Services.AddScoped<IScopedRandomValueService, RandomValueService>();
 builder.Services.AddSingleton<ISingletonRandomValueService, RandomValueService>();
 

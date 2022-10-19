@@ -1,4 +1,5 @@
-﻿using NetCoreCourse.FirstExample.WebApp.Models;
+﻿using NetCoreCourse.FirstExample.WebApp.Controllers;
+using NetCoreCourse.FirstExample.WebApp.Models;
 
 namespace NetCoreCourse.FirstExample.WebApp.Services
 {
@@ -26,6 +27,16 @@ namespace NetCoreCourse.FirstExample.WebApp.Services
                 Scoped = scopedService.RandomValue,
                 Singleton = singletonService.RandomValue
             };
+        }
+
+        public void GetRandomValues2(RandomServiceValues values)
+        {
+            values.Singleton = 6;
+        }
+
+        public void GetRandomValues3(Estructura values)
+        {
+            values.MyProperty = 1100000;
         }
     }
 }
