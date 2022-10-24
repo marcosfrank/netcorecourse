@@ -1,5 +1,7 @@
 // No tenemos una clase. Como es posible? Utilicemos un decompilador.
+using Microsoft.EntityFrameworkCore;
 using NetCoreCourse.FirstExample.WebApp.Configuration;
+using NetCoreCourse.FirstExample.WebApp.DataAccess;
 using NetCoreCourse.FirstExample.WebApp.Services;
 using System.Text.Json.Serialization;
 
@@ -32,12 +34,12 @@ builder.Services.AddScoped<IScopedRandomValueService, RandomValueService>();
 builder.Services.AddSingleton<ISingletonRandomValueService, RandomValueService>();
 
 //Lo vamos a ver en el Modulo de EF Core
-//builder.Services.AddDbContext<ThingsContext>(options =>
-//{
-//    //Para poder utilizar SqlServer necesitamos instalar el paquete
-//    //Microsoft.EntityFrameworkCore.SqlServer
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("ThingsContextConnection"));
-//});
+builder.Services.AddDbContext<ThingsContext>(options =>
+{
+    //Para poder utilizar SqlServer necesitamos instalar el paquete
+    //Microsoft.EntityFrameworkCore.SqlServer
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ThingsContextConnection"));
+});
 
 //Creando la aplicacion.
 var app = builder.Build();
