@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NetCoreCourse.FirstExample.WebApp.DataAccess;
 using NetCoreCourse.FirstExample.WebApp.Dto;
 using NetCoreCourse.FirstExample.WebApp.Entities;
 using NetCoreCourse.FirstExample.WebApp.Handlers;
@@ -36,8 +37,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             //var res2 = repository.ModifyDescription(cosa, "Modem");
 
             return Ok(new { 
-                res1,
-                list
+                res1
             });
         }
 
