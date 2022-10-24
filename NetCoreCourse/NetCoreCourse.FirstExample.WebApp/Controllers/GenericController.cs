@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NetCoreCourse.FirstExample.WebApp.Controllers.ToRemove;
 using NetCoreCourse.FirstExample.WebApp.Dto;
+using NetCoreCourse.FirstExample.WebApp.Entities;
 using NetCoreCourse.FirstExample.WebApp.Handlers;
 
 namespace NetCoreCourse.FirstExample.WebApp.Controllers
@@ -26,13 +26,19 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
                 HasSolarRoof = false,
             };
 
-            list2.Add(plane);
-            list2.Add(plane2);
-            list2.Add(car1);
+            var repository = new RepositorioBase<Cosa>();
+            var cosa = new Cosa { 
+                Id = 1,
+                Descripcion = "Escritorio"
+            };
+            
+            var res1 = repository.Add(cosa);
+            //var res2 = repository.ModifyDescription(cosa, "Modem");
 
-
-
-            return Ok(list2);
+            return Ok(new { 
+                res1,
+                list
+            });
         }
 
         [HttpGet("swap")]

@@ -71,7 +71,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
         [Route("filters")]
         public List<Category> GetCategoriesByFilters([FromQuery]string description)
         {
-            return thingsContext.Categories.Where(c => c.Description.Contains(description)).ToList();
+            return thingsContext.Categories.Where(c => c.Description.Contains(String.Empty)).ToList();
         }
 
         [HttpGet]
@@ -79,7 +79,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
         public List<Category> GetCategoriesThatHasThings()
         {
             return thingsContext.Categories
-                .Include(c => c.Things)
+                //.Include(c => c.Things)
                 .Where(c => c.Things.Any())
                 .ToList();
         }

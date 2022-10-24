@@ -25,7 +25,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public ActionResult Remove(int id)
+        public ActionResult Remove([FromBody]int id)
         {
             var cat = thingsContext.Things.Find(id);
             if(cat is null)
@@ -33,6 +33,11 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
 
             thingsContext.Things.Remove(cat);
             thingsContext.SaveChanges();
+
+            thingsContext.Database.BeginTransaction();
+
+            thingsContext.Database.CommitTransaction();
+            thingsContext.Database.RollbackTransaction();
 
             return NoContent();
         }
