@@ -97,6 +97,27 @@
 					"response": []
 				},
 				{
+					"name": "/clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44382/api/log/clients",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"log",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "/config",
 					"request": {
 						"method": "GET",
@@ -231,6 +252,26 @@
 					"name": "/extensionmethods",
 					"request": {
 						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44382/api/extensionmethods",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"extensionmethods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/extensionmethods FLUENT",
+					"request": {
+						"method": "POST",
 						"header": [],
 						"url": {
 							"raw": "https://localhost:44382/api/extensionmethods",
@@ -397,7 +438,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Description\":\"New Description\"\r\n}",
+							"raw": "{\r\n    \"Description\":\"New Description 20\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -464,6 +505,27 @@
 							"path": [
 								"api",
 								"things"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/categories/withItems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44382/api/categories/withItems",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"categories",
+								"withItems"
 							]
 						}
 					},
@@ -597,6 +659,26 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "/unitofwork",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44382/api/unitofwork",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"unitofwork"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -604,328 +686,657 @@
 			"name": "WEB APIs",
 			"item": [
 				{
-					"name": "/api/categories",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"test\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "HTTP Verbos",
+					"item": [
+						{
+							"name": "/api/categories",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/api/categories/1",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"test\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "/api/categories/1",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/2",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"2"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories/2",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/api/categories/ Id no coinciden",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\":50,\r\n    \"description\": \"test\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "/api/categories/ Id no coinciden",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":50,\r\n    \"description\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/1000",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"1000"
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories/1000",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories",
-								"1000"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/api/categories",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/api/categories Pagination",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories?page=2&pageSize=3",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "2"
-								},
-								{
-									"key": "pageSize",
-									"value": "3"
-								},
-								{
-									"key": "descriptionContains",
-									"value": "Fish",
-									"disabled": true
-								},
-								{
-									"key": "orderBy",
-									"value": "Description desc",
-									"disabled": true
+						{
+							"name": "/api/categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories"
+									]
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/api/categories Filter",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories?page=1&pageSize=5&descriptionContains=Fish",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "pageSize",
-									"value": "5"
-								},
-								{
-									"key": "descriptionContains",
-									"value": "Fish"
-								},
-								{
-									"key": "orderBy",
-									"value": "Description desc",
-									"disabled": true
+							},
+							"response": []
+						},
+						{
+							"name": "/api/categories Pagination",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories?page=2&pageSize=3",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										},
+										{
+											"key": "descriptionContains",
+											"value": "Fish",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "Description desc",
+											"disabled": true
+										}
+									]
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/api/categories OrderBy",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories?orderBy=Description desc",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "2",
-									"disabled": true
-								},
-								{
-									"key": "pageSize",
-									"value": "3",
-									"disabled": true
-								},
-								{
-									"key": "descriptionContains",
-									"value": "Fish",
-									"disabled": true
-								},
-								{
-									"key": "orderBy",
-									"value": "Description desc"
+							},
+							"response": []
+						},
+						{
+							"name": "/api/categories Filter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories?page=1&pageSize=5&descriptionContains=Fish",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										},
+										{
+											"key": "descriptionContains",
+											"value": "Fish"
+										},
+										{
+											"key": "orderBy",
+											"value": "Description desc",
+											"disabled": true
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "/api/categories OrderBy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories?orderBy=Description desc",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "3",
+											"disabled": true
+										},
+										{
+											"key": "descriptionContains",
+											"value": "Fish",
+											"disabled": true
+										},
+										{
+											"key": "orderBy",
+											"value": "Description desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/categories/1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/categories/1000 NotFound",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/1000",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"1000"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/categories/1",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/1",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/categories/error",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/error",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"error"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "/api/categories/1",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories/1",
-							"protocol": "https",
-							"host": [
-								"localhost"
+					"name": "JWT",
+					"item": [
+						{
+							"name": "/api/accounts/login Admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var response = pm.response.json();\r",
+											"pm.globals.set(\"net-core-course-admin-token\", response.token);"
+										],
+										"type": "text/javascript"
+									}
+								}
 							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories",
-								"1"
-							]
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminPass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/accounts/login",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"accounts",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/secured/both Sin Token",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminPass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/secured/both",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"secured",
+										"both"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/secured/both Token Admin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{net-core-course-admin-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminPass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/secured/both",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"secured",
+										"both"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/secured/admin Token Admin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{net-core-course-admin-token}}",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminPass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/secured/admin",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"secured",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/accounts/login User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var response = pm.response.json();\r",
+											"pm.globals.set(\"net-core-course-user-token\", response.token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"mypass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/accounts/login",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"accounts",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/secured/both Token User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{net-core-course-user-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminPass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/secured/both",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"secured",
+										"both"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/secured/admin Token User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{net-core-course-user-token}}",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminPass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/secured/admin",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"secured",
+										"admin"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "/api/categories/1000 NotFound",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories/1000",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories",
-								"1000"
-							]
+					"name": "Nuevas Funcionalidades",
+					"item": [
+						{
+							"name": "/minimalapi",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"s\":\"string property\",\r\n    \"i\": 3,\r\n    \"d\": 2.5,\r\n    \"dt\": \"2022-05-01T23:00:05\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/minimalapi",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"minimalapi"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "/api/categories/1",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories/1",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/api/categories/error",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/webapi/categories/error",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"webapi",
-								"categories",
-								"error"
-							]
-						}
-					},
-					"response": []
+					]
 				}
 			]
 		}

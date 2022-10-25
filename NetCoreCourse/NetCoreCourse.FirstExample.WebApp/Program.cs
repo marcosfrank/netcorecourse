@@ -33,6 +33,8 @@ builder.Services.AddTransient<ITransientRandomValueService, RandomValueService>(
 builder.Services.AddScoped<IScopedRandomValueService, RandomValueService>();
 builder.Services.AddSingleton<ISingletonRandomValueService, RandomValueService>();
 
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 //Lo vamos a ver en el Modulo de EF Core
 builder.Services.AddDbContext<ThingsContext>(options =>
 {
