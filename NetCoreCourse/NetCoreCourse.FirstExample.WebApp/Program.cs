@@ -1,8 +1,16 @@
 // No tenemos una clase. Como es posible? Utilicemos un decompilador.
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.Json;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using NetCoreCourse.FirstExample.WebApp.Configuration;
 using NetCoreCourse.FirstExample.WebApp.DataAccess;
+using NetCoreCourse.FirstExample.WebApp.Dto;
+using NetCoreCourse.FirstExample.WebApp.Filters;
+using NetCoreCourse.FirstExample.WebApp.Handlers;
 using NetCoreCourse.FirstExample.WebApp.Services;
+using System.Security.Cryptography.Xml;
+using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,27 +21,58 @@ builder.Services.AddRazorPages();
 //Agregamos controllers y configuramos el serializador de JSON.
 // Esta configuracion de Ignorar Ciclos solo debemos realizarlo ya que utilizamos las entidades de EF Core como respuesta de la API.
 // Normalmente no lo necesitariamos.
-builder.Services.AddControllers()
-    .AddJsonOptions(x =>
+builder.Services.AddControllers(options => {
+    options.Filters.Add<NetCoreCourseFilter>();
+})
+.AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+});
+
+//Modulo API
+//builder.Services.AddSwaggerGen();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.TokenValidationParameters = new TokenValidationParameters
     {
-        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
-    }
-);
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey
+        (Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = false,
+        ValidateIssuerSigningKey = true
+    };
+});
+
+builder.Services.AddAuthorization();
 
 //Agregando el primer objeto de configuracion.
 var firstConfigurationObject = builder.Configuration.GetSection("FirstConfiguration");
 builder.Services.Configure<FirstConfigurationOptions>(firstConfigurationObject);
+//Agregando configuracion para JWT
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JWT"));
 
 // Agregamos los servicios al contenedor de dependencias
 builder.Services.AddTransient<IForecastService, ForecastService>();
 builder.Services.AddTransient<IServiceUsingServices, ServiceUsingServices>();
+builder.Services.AddTransient<IMinimalApiService, MinimalApiService>();
 
 builder.Services.AddTransient<ITransientRandomValueService, RandomValueService>();
 builder.Services.AddScoped<IScopedRandomValueService, RandomValueService>();
 builder.Services.AddSingleton<ISingletonRandomValueService, RandomValueService>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 
 //Lo vamos a ver en el Modulo de EF Core
 builder.Services.AddDbContext<ThingsContext>(options =>
@@ -65,11 +104,20 @@ app.UseStaticFiles(); //img/logo.jpg
 
 app.UseRouting();
 
+//Modulo API
+//app.UseSwagger();
+//app.UseSwaggerUI();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
 //Definicion de "Minimal API". Mas info en: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0
 app.MapGet("/api/firstapi", () => "Hey here is your first API!");
+
+app.MapPost("/api/minimalapi", (MinimalApiRequest request, IMinimalApiService service) => {
+    return service.Execute(request);
+});
 
 app.MapControllerRoute(
        name: "default",
