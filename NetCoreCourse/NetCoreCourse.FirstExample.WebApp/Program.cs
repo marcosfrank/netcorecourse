@@ -31,7 +31,7 @@ builder.Services.AddControllers(options => {
 });
 
 //Modulo API
-//builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -104,9 +104,9 @@ app.UseStaticFiles(); //img/logo.jpg
 
 app.UseRouting();
 
-//Modulo API
-//app.UseSwagger();
-//app.UseSwaggerUI();
+//Modulo API - Middleware para utilizar Swagger
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthentication();
 app.UseAuthorization();
