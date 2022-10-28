@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "ViewData"; //Esto se asigna para el valor lo tome el _Layout.cshtml
+}
+
+<h2>Bienvenidos al Curso @ViewData["Curso"]</h2>
+
+<ul>
+    @for (int i = 1; i <= (int)ViewData["Alumnos"]!; i++)
+    {
+        <li>Alumno @i</li>
+    }
+</ul>

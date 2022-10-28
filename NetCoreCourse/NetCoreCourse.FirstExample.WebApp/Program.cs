@@ -17,10 +17,6 @@ var builder = WebApplication.CreateBuilder(args);
 //Agregamos las paginas de Razor. Que son? Las vamos a ver en el modulo de MVC.
 builder.Services.AddRazorPages();
 
-//Lo vamos a ver en el Modulo de EF Core
-//Agregamos controllers y configuramos el serializador de JSON.
-// Esta configuracion de Ignorar Ciclos solo debemos realizarlo ya que utilizamos las entidades de EF Core como respuesta de la API.
-// Normalmente no lo necesitariamos.
 builder.Services.AddControllers(options => {
     options.Filters.Add<NetCoreCourseFilter>();
 })
