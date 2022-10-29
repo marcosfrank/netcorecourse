@@ -1,9 +1,15 @@
+﻿using NetCoreCourse.MvcApp.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSingleton<IAlumnoService, AlumnoService>(); //Singleton solo para que queden los datos que agregamos en memoria.
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
