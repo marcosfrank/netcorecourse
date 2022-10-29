@@ -9,6 +9,13 @@
 <p>
     <a asp-action="Create">Crear</a>
 </p>
+<form asp-controller="Alumnos" asp-action="Index" method="get"> @*Ver el metodo utilizado*@
+    <p>
+        Nombre Completo Contiene: 
+        <input type="text" name="search" placeholder="Introduzca un filtro" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>

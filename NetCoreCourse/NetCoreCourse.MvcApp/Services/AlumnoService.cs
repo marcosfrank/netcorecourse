@@ -4,6 +4,7 @@ namespace NetCoreCourse.MvcApp.Services
 {
     public class AlumnoService : IAlumnoService
     {
+        #region Datos de Prueba
         private List<Alumno> stubs = new List<Alumno> { 
             new Alumno{
                 Id = 1,
@@ -30,6 +31,7 @@ namespace NetCoreCourse.MvcApp.Services
                 FechaDeModificacion = new DateTime(2021,6,6),
             },
         };
+        #endregion
 
         public void Delete(Alumno alumno)
         {
@@ -41,9 +43,17 @@ namespace NetCoreCourse.MvcApp.Services
             return stubs.Any(stub => stub.Id == id);
         }
 
-        public List<Alumno> GetAll()
+        public List<Alumno> GetAll(string search)
         {
-            return stubs;
+            if (string.IsNullOrWhiteSpace(search))
+                return stubs;
+
+            var loweredSearch = search.ToLowerInvariant();
+            var filteredResults = stubs
+                .Where(a => a.Nombre.ToLowerInvariant().Contains(loweredSearch)
+                        || a.Apellido.ToLowerInvariant().Contains(loweredSearch))
+                .ToList();
+            return filteredResults;
         }
 
         public Alumno GetById(int id)

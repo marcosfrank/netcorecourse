@@ -15,9 +15,9 @@ namespace NetCoreCourse.MvcApp.Controllers
         }
 
         // GET: Alumnos
-        public IActionResult Index()
+        public IActionResult Index(string search)
         {
-            var dbAlumnos = service.GetAll();
+            var dbAlumnos = service.GetAll(search);
             var viewmodels = dbAlumnos.ToViewModels();
             return View(viewmodels);
         }
@@ -47,6 +47,7 @@ namespace NetCoreCourse.MvcApp.Controllers
 
         // POST: Alumnos/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(AlumnoViewModel alumnoViewModel)
         {
             if (ModelState.IsValid)
@@ -76,6 +77,7 @@ namespace NetCoreCourse.MvcApp.Controllers
 
         // POST: Alumnos/Edit/5
         [HttpPost] //POST para update? REST es un estilo. No siempre se respeta y esto no significa que este mal.
+        [ValidateAntiForgeryToken] //Junto con el form TAG nos ayudan a prevenir XSRF/CSRF.
         public async Task<IActionResult> Edit(int id, AlumnoViewModel alumnoViewModel)
         {
             if (id != alumnoViewModel.Id)
