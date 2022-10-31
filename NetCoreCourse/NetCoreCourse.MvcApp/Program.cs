@@ -1,4 +1,5 @@
-﻿using NetCoreCourse.MvcApp.Services;
+﻿using NetCoreCourse.MvcApp.Protos;
+using NetCoreCourse.MvcApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IAlumnoService, AlumnoService>(); //Singleton solo para que queden los datos que agregamos en memoria.
+
+builder.Services.AddGrpc();
 
 var app = builder.Build();
 
@@ -29,5 +32,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapGrpcService<GreeterService>();
 
 app.Run();
