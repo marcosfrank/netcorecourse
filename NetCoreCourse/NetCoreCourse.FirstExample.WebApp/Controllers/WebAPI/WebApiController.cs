@@ -37,7 +37,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers.WebAPI
                || string.IsNullOrWhiteSpace(category.Description))
                 return BadRequest("Description is mandatory");
             //Aca creariamos la categoria en nuestra BBDD
-            var catCreatedOnDb = new CategoryDto { 
+            var catCreatedOnDb = new Category { 
                 Id = new Random().Next(1, 100),
                 Description = category.Description
             };
@@ -110,7 +110,8 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers.WebAPI
             return NoContent();
         }
 
-        [HttpPost("error")]
+        [HttpPost]
+        [Route("error")]
         public IActionResult Error()
         {
             throw new InvalidOperationException("You cannot send errors to the app."); //Como estamos en Development nos muestra el stacktrace.
