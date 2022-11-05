@@ -36,6 +36,8 @@ namespace NetCoreCourse.MvcApp.Controllers
                 return NotFound();
             }
 
+            ViewBag.AsignadoEnDetails = "Este string lo asigne en el action Details del controller";
+
             return View(alumno.ToViewModel());
         }
 
