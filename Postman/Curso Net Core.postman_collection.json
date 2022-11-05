@@ -695,7 +695,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"description\": \"test\"\r\n}",
+									"raw": "{\r\n    \"description\": \"testa\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -719,7 +719,7 @@
 							"response": []
 						},
 						{
-							"name": "/api/categories/1",
+							"name": "/api/categories/2",
 							"request": {
 								"method": "PUT",
 								"header": [],
@@ -807,7 +807,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories?page=2&pageSize=3",
+									"raw": "https://localhost:44382/api/webapi/categories?page=1&pageSize=3&descriptionContains=Fish&orderBy=Description desc",
 									"protocol": "https",
 									"host": [
 										"localhost"
@@ -821,7 +821,7 @@
 									"query": [
 										{
 											"key": "page",
-											"value": "2"
+											"value": "1"
 										},
 										{
 											"key": "pageSize",
@@ -829,13 +829,11 @@
 										},
 										{
 											"key": "descriptionContains",
-											"value": "Fish",
-											"disabled": true
+											"value": "Fish"
 										},
 										{
 											"key": "orderBy",
-											"value": "Description desc",
-											"disabled": true
+											"value": "Description desc"
 										}
 									]
 								}
@@ -1011,6 +1009,80 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "/api/categories/validations",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/validations",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"validations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/categories/validations con body",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Filter\":\"something\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/validations",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"validations"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1066,7 +1138,14 @@
 							},
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"adminPass\"\r\n}",
@@ -1104,6 +1183,12 @@
 										"key": "Authorization",
 										"value": "Bearer {{net-core-course-admin-token}}",
 										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImlzcyI6Imh0dHBzOi8vbmV0Y29yZWNvdXJzZS5jb20vIiwiYXVkIjoiaHR0cHM6Ly9uZXRjb3JlY291cnNlLmNvbS8ifQ.QsAiXCObGsUYRxBny-iw6laOA0rqVhgdMsYQ7iEA5Ss",
+										"type": "text",
+										"disabled": true
 									}
 								],
 								"body": {
@@ -1331,6 +1416,38 @@
 									"path": [
 										"api",
 										"minimalapi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"s\":\"string property\",\r\n    \"i\": 3,\r\n    \"d\": 2.5,\r\n    \"dt\": \"2022-05-01T23:00:05\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/firstapi",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"firstapi"
 									]
 								}
 							},
