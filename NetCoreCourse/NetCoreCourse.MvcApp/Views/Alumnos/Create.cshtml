@@ -37,6 +37,8 @@
 <div>
     <a asp-action="Index">Volver a la lista</a>
 </div>
+@await Html.PartialAsync("_Parcial")
+
 @*Este Script es el que permite las validaciones FE*@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} 
