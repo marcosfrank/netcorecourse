@@ -4,8 +4,9 @@ using NetCoreCourse.FirstExample.WebApp.Entities;
 
 namespace NetCoreCourse.FirstExample.WebApp.Controllers.WebAPI
 {
+    //[ApiController]
     [Route("api/[controller]/categories")] //Cambie esto para que se vea que siempre apuntamos a una coleccion.
-    public class WebApiController : ControllerBase
+    public class WebApiController
     {
         #region MockData
         private List<CategoryDto> CategoriesStub = new List<CategoryDto> {
@@ -116,6 +117,22 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers.WebAPI
         {
             throw new InvalidOperationException("You cannot send errors to the app."); //Como estamos en Development nos muestra el stacktrace.
             //Intentemos cambiar el ambiente a PRODUCTION y veamos el resultado.
+        }
+
+        [HttpPost("validations")]
+        public IActionResult TestingValidations(ValidationsDto dto)
+        {
+            //Ahora si agregamos el [ApiController]
+            if (!ModelState.IsValid)
+                return BadRequest("Desde el Controller");
+
+            if (DateTime.Now.Year < 1900)
+                return Problem("Problem");
+
+            if (DateTime.Now.Year < 1900)
+                return NotFound();
+
+            return Ok();
         }
 
     }
