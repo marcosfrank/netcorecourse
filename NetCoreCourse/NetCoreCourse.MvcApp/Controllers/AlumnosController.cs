@@ -50,13 +50,20 @@ namespace NetCoreCourse.MvcApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(AlumnoViewModel alumnoViewModel)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+                return View(alumnoViewModel);
+
+            var list = service.GetAll(alumnoViewModel.Nombre); //simulemos que validamos duplicados.
+            if (list.Any(a => a.Nombre == alumnoViewModel.Nombre
+                    && a.Apellido == alumnoViewModel.Apellido))
             {
-                var entity = alumnoViewModel.ToEntity();
-                service.Save(entity);
-                return RedirectToAction(nameof(Index));
+                ModelState.AddModelError(String.Empty, "Ya existe un alumno con ese nombre y apellido.");
+                return View(alumnoViewModel);
             }
-            return View(alumnoViewModel);
+
+            var entity = alumnoViewModel.ToEntity();
+            service.Save(entity);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Alumnos/Edit/5

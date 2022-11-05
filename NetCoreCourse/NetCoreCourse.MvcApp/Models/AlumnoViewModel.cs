@@ -9,7 +9,7 @@ namespace NetCoreCourse.MvcApp.Models
         [Required(ErrorMessage = "Nombre es obligatorio.")]
         [MaxLength(10, ErrorMessage = "El nombre solo puede tener 10 caracteres.")] //DataAnnotations. Intentemos quitar el max lenght del HTML.
         public string Nombre { get; set; }
-        [Required(ErrorMessage = "Los apellidos son obligatorio.")]
+        [Required(ErrorMessage = "Los apellidos son obligatorios.")]
         [Display(Name = "Todos los apellidos")]
         public string Apellido { get; set; }
         [Required(ErrorMessage = "La edad es obligatoria.")]
