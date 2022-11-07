@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.FirstExample.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.FirstExample.WebApp", "NetCoreCourse.FirstExample.WebApp\NetCoreCourse.FirstExample.WebApp.csproj", "{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreCourse.MvcApp", "NetCoreCourse.MvcApp\NetCoreCourse.MvcApp.csproj", "{AA3F8ED2-7C44-47A1-A6DF-34748B791FDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.MvcApp", "NetCoreCourse.MvcApp\NetCoreCourse.MvcApp.csproj", "{AA3F8ED2-7C44-47A1-A6DF-34748B791FDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
