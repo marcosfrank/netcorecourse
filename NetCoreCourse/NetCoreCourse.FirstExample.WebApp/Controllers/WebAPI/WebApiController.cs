@@ -6,7 +6,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers.WebAPI
 {
     //[ApiController]
     [Route("api/[controller]/categories")] //Cambie esto para que se vea que siempre apuntamos a una coleccion.
-    public class WebApiController
+    public class WebApiController : ControllerBase
     {
         #region MockData
         private List<CategoryDto> CategoriesStub = new List<CategoryDto> {

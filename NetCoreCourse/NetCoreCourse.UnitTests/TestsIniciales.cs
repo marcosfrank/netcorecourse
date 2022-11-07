@@ -39,6 +39,16 @@ namespace NetCoreCourse.UnitTests
             Assert.IsTrue(resultado);
         }
 
-
+        [TestMethod]
+        [Ignore("Revisemos con el equipo porque falla.")]
+        public void EsteTest_Va_a_ignorarse()
+        {
+            //arrange
+            var valor = 7;
+            //act
+            var resultado = valor.IsEven();
+            //assert
+            Assert.IsTrue(resultado); //Aca nos falla
+        }
     }
 }
