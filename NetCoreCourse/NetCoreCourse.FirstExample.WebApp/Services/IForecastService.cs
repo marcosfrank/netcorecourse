@@ -2,6 +2,9 @@
 {
     public interface IForecastService
     {
+        int GetTemperature();
         string GetWeatherByCity(string city);
+
+        DateTime LastWeatherReportDate { get; }
     }
 }

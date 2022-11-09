@@ -3,7 +3,7 @@ using NetCoreCourse.FirstExample.WebApp.Statics;
 namespace NetCoreCourse.UnitTests
 {
     [TestClass]
-    public class TestsIniciales
+    public class aTestsIniciales
     {
         [TestMethod]
         public void ElOperadorSuma_Funciona()
