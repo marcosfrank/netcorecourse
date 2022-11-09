@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.MvcApp", "Net
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.UnitTests", "NetCoreCourse.UnitTests\NetCoreCourse.UnitTests.csproj", "{76BF8863-A366-4032-81D1-19714E219EA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreCourse.XUnitTests", "NetCoreCourse.XUnitTests\NetCoreCourse.XUnitTests.csproj", "{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -42,7 +42,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers.WebAPI
                 Id = new Random().Next(1, 100),
                 Description = category.Description
             };
-            //Todo salio bien, es un POST, asi que vamos a devolver CREATED
+            //Como salio bien y es un POST, asi que vamos a devolver CREATED
             return Created($"/categories/{catCreatedOnDb.Id}", catCreatedOnDb);
             //Ver en POSTMAN que el response tiene un header "Location"
         }
