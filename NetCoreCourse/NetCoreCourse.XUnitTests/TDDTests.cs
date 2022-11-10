@@ -18,7 +18,22 @@ namespace NetCoreCourse.XUnitTests
             - Ok
          */
 
+        //TODO: Realizar el Ejercicio 3 con TDD.
+        //      Utilizar las siguientes interfaces si los ayuda:
+        //public interface IBankAccountService
+        //{
+        //    decimal GetBalance(int userId);
+        //}
+
+        //public interface IUserService
+        //{
+        //    decimal GetById(int userId);
+        //}
+
+
     }
+
+    
 
 
     public class FibonacciTests

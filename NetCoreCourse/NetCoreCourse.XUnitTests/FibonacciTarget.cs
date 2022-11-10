@@ -5,7 +5,7 @@
         public FibonacciTarget()
         {
         }
-        //TODO: Ahora los quiero ver refactorizar este metodo. Tenemos tests que nos cubren.
+        //TODO: Refactorizar este metodo.
         public List<long> GetNumbers(int numeros)
         {
             var list = new List<long>();
