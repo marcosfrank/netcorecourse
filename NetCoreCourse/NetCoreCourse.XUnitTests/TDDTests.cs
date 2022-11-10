@@ -105,6 +105,7 @@ namespace NetCoreCourse.XUnitTests
             numbers[39].Should().Be(102334155);
         }
 
+        //TODO: Implementar este test
         [Fact(Skip = "Este test lo tienen que hacer funcionar los alumnos.")]
         public void ElMetodo_con_parametro_negativo_lanza_InvalidOperationException()
         {
