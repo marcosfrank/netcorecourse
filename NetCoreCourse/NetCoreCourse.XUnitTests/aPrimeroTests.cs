@@ -17,12 +17,12 @@ namespace NetCoreCourse.XUnitTests
         }
 
         [Theory] //Se imaginan como hacerlo con MSTests
-        [InlineData(2)]
-        [InlineData(4)]
-        [InlineData(14)]
-        [InlineData(20)]
-        [InlineData(200)]
-        public void Son_Par(int numero)
+        [InlineData(2, "dos")]
+        [InlineData(4, "cuatro")]
+        [InlineData(14, "catorce")]
+        [InlineData(20, "veinte")]
+        [InlineData(200, "doscientos")]
+        public void Son_Par(int numero, string nombreNumero)
         {
             var resultado = numero.IsEven();
 

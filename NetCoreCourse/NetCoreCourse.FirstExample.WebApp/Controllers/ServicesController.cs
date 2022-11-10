@@ -59,6 +59,14 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             return Ok(clima);
         }
 
+        [HttpGet]
+        public DateTime GetLastWeatherReportDate()
+        {
+            return forecastService.LastWeatherReportDate;
+        }
+
+
+
         [HttpGet("random")]
         public IActionResult RandomValue()
         {
@@ -75,10 +83,6 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             return Ok(new RandomServiceResponse(fromController, fromService));
         }
 
-        [HttpGet]
-        public DateTime GetLastWeatherReportDate()
-        {
-            return forecastService.LastWeatherReportDate;
-        }
+        
     }
 }

@@ -85,36 +85,39 @@ namespace NetCoreCourse.UnitTests
         
 
         [TestMethod]
-        public void GetCurrentTemperature_Deveulve_Frio_Cuando_Temperatura_Es_Menor_A_5()
+        public void GetCurrentTemperature_Deveulve_Frio_Cuando_Temperatura_Es_Menor_A_10()
         {
             var resultado = target.GetCurrentTemperature();
             var resultadoTransformado = (OkObjectResult)resultado;
 
-            Assert.AreEqual(resultadoTransformado.Value, "Frio");
+            Assert.AreEqual("Frio", resultadoTransformado.Value);
         }
 
         //Como hacemos con los demas? Es decir Templado y Caluroso?
 
-        #region Hidden section
-        //[TestMethod]
-        //public void GetCurrentTemperature_Deveulve_Frio_Cuando_Temperatura_Es_Menor_A_25()
-        //{
-        //    mockForecast.Setup(m => m.GetTemperature()).Returns(20);
+        
+        [TestMethod]
+        public void GetCurrentTemperature_Deveulve_Frio_Cuando_Temperatura_Es_Menor_A_25()
+        {
+            mockForecast.Setup(m => m.GetTemperature()).Returns(20);
 
-        //    target = new ServicesController(
-        //        mockForecast.Object,
-        //        new Mock<ITransientRandomValueService>().Object,
-        //        new Mock<IScopedRandomValueService>().Object,
-        //        new Mock<ISingletonRandomValueService>().Object,
-        //        new Mock<IServiceUsingServices>().Object
-        //    );
+            var resultado = target.GetCurrentTemperature();
+            var resultadoTransformado = (OkObjectResult)resultado;
 
-        //    var resultado = target.GetCurrentTemperature();
-        //    var resultadoTransformado = (OkObjectResult)resultado;
+            Assert.AreEqual("Templado", resultadoTransformado.Value);
+        }
 
-        //    Assert.AreEqual(resultadoTransformado.Value, "Templado");
-        //}
-        #endregion
+        [TestMethod]
+        public void GetCurrentTemperature_Deveulve_Frio_Cuando_Temperatura_Es_Mayor_A_25()
+        {
+            mockForecast.Setup(m => m.GetTemperature()).Returns(45);
+
+            var resultado = target.GetCurrentTemperature();
+            var resultadoTransformado = (OkObjectResult)resultado;
+
+            Assert.AreEqual("Caluroso", resultadoTransformado.Value);
+        }
+
 
 
         [TestMethod]

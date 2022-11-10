@@ -2,6 +2,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NetCoreCourse.MvcApp.Controllers;
+using NetCoreCourse.MvcApp.Entities;
 using NetCoreCourse.MvcApp.Models;
 using NetCoreCourse.MvcApp.Services;
 
@@ -19,8 +20,8 @@ namespace NetCoreCourse.XUnitTests
         {
             mockAlumnoService = new Mock<IAlumnoService>();
             //GetAll
-            mockAlumnoService.Setup(x => x.GetAll(It.IsAny<string>())).Returns(new List<MvcApp.Entities.Alumno> { 
-                new MvcApp.Entities.Alumno{ 
+            mockAlumnoService.Setup(x => x.GetAll(It.IsAny<string>())).Returns(new List<Alumno> { 
+                new Alumno{ 
                     Nombre = "Test",
                     Apellido = "Test Apellido",
                 }
@@ -32,11 +33,12 @@ namespace NetCoreCourse.XUnitTests
         }
 
         [Fact]
-        public void Create_Without_Parameters_Returns_A_View()
+        public void Create_Without_Parameters_Returns_A_View_And_The_View_Is_Create()
         {
             var result = target.Create();
 
             result.Should().BeOfType<ViewResult>();
+            result.As<ViewResult>().ViewName.Should().BeNull();
         }
 
         [Fact]
@@ -48,12 +50,14 @@ namespace NetCoreCourse.XUnitTests
             
             //Assert del tipo de respuesta
             result.Should().BeOfType<ViewResult>();
-            var viewResult = (ViewResult)result;
-            viewResult.Model.Should().BeOfType<List<AlumnoViewModel>>();
-            //Assert de los valores de las respuestas
+
+            var viewResult = result as ViewResult;
             viewResult.Should().NotBeNull();
-            var alumnosList = (List<AlumnoViewModel>)viewResult.Model;
-            alumnosList.Should().Contain(a => a.Nombre == "Test");
+
+            result.As<ViewResult>().Model.Should().BeOfType<List<AlumnoViewModel>>();
+            //Assert de los valores de las respuestas
+            viewResult.Model.As<List<AlumnoViewModel>>()
+                .Should().Contain(a => a.Nombre == "Test");
         }
 
 

@@ -9,8 +9,8 @@ namespace NetCoreCourse.UnitTests
         public void ElOperadorSuma_Funciona()
         {
             //arrange
-            var valor1 = 1;
-            var valor2 = 2;
+            var valor1 = 2;
+            var valor2 = 1;
             //act
             var suma = valor1 + valor2;
             //assert

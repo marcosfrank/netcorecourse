@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NetCoreCourse.FirstExample.WebApp.Dto;
 using NetCoreCourse.FirstExample.WebApp.Entities;
+using NetCoreCourse.FirstExample.WebApp.Services;
 
 namespace NetCoreCourse.FirstExample.WebApp.Controllers.WebAPI
 {
@@ -42,6 +43,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers.WebAPI
                 Id = new Random().Next(1, 100),
                 Description = category.Description
             };
+            new ForecastService().GetWeatherByCity("Rosario");
             //Como salio bien y es un POST, asi que vamos a devolver CREATED
             return Created($"/categories/{catCreatedOnDb.Id}", catCreatedOnDb);
             //Ver en POSTMAN que el response tiene un header "Location"
