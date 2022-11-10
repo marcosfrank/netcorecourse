@@ -53,7 +53,7 @@ namespace NetCoreCourse.MvcApp.Controllers
         public IActionResult Create(AlumnoViewModel alumnoViewModel)
         {
             if (!ModelState.IsValid)
-                return View(alumnoViewModel);
+                return View("Create", alumnoViewModel);
 
             var list = service.GetAll(alumnoViewModel.Nombre); //simulemos que validamos duplicados.
             if (list.Any(a => a.Nombre == alumnoViewModel.Nombre

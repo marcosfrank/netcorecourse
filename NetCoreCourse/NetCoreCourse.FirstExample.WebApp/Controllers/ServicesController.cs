@@ -36,6 +36,37 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
             return Ok(result);
         }
 
+        [HttpGet("temperatura")]
+        public IActionResult GetCurrentTemperature()
+        {
+            var temeperature = forecastService.GetTemperature();
+            string clima = string.Empty;
+            switch (temeperature)
+            {
+                case < 10:
+                    clima = "Frio";
+                    break;
+
+                case < 25:
+                    clima = "Templado";
+                    break;
+
+                default:
+                    clima = "Caluroso";
+                    break;
+            }
+
+            return Ok(clima);
+        }
+
+        [HttpGet]
+        public DateTime GetLastWeatherReportDate()
+        {
+            return forecastService.LastWeatherReportDate;
+        }
+
+
+
         [HttpGet("random")]
         public IActionResult RandomValue()
         {
@@ -51,5 +82,7 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
 
             return Ok(new RandomServiceResponse(fromController, fromService));
         }
+
+        
     }
 }
