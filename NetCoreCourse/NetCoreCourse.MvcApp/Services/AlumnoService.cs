@@ -56,6 +56,11 @@ namespace NetCoreCourse.MvcApp.Services
             return filteredResults;
         }
 
+        public Task<List<Alumno>> GetAllAsync()
+        {
+            return Task.FromResult(stubs);
+        }
+
         public Alumno GetById(int id)
         {
             return stubs.FirstOrDefault(x => x.Id == id);

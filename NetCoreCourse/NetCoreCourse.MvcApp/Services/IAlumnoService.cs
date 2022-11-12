@@ -14,5 +14,7 @@ namespace NetCoreCourse.MvcApp.Services
         bool Exists(int id);
 
         void Delete(Alumno alumno);
+
+        Task<List<Alumno>> GetAllAsync();
     }
 }

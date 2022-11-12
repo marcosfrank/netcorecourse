@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.MvcApp", "Net
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.UnitTests", "NetCoreCourse.UnitTests\NetCoreCourse.UnitTests.csproj", "{76BF8863-A366-4032-81D1-19714E219EA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreCourse.XUnitTests", "NetCoreCourse.XUnitTests\NetCoreCourse.XUnitTests.csproj", "{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.XUnitTests", "NetCoreCourse.XUnitTests\NetCoreCourse.XUnitTests.csproj", "{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

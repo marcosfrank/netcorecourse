@@ -8,7 +8,11 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IAlumnoService, AlumnoService>(); //Singleton solo para que queden los datos que agregamos en memoria.
 
-builder.Services.AddGrpc();
+
+builder.Services.AddGrpc(opt => {
+    opt.EnableDetailedErrors = true; //Esto nos permite tener errores detallados
+});
+builder.Services.AddGrpcReflection();
 
 var app = builder.Build();
 
@@ -20,6 +24,10 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+}
+else
+{
+    app.MapGrpcReflectionService();
 }
 
 app.UseHttpsRedirection();
@@ -33,6 +41,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapGrpcService<GreeterService>();
+app.MapGrpcService<GrpcNetCoreCourseService>();
 
 app.Run();
