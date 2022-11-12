@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto"; //Importando un tipo expuesto por google
+option csharp_namespace = "NetCoreCourse.MvcApp.Protos"; //Namespace donde se crean las clases de este servicio
+
+service ProtoAlumnoService {
+  rpc GetById(CourseRequest) returns (AlumnoResponse);
+  rpc GetAll(google.protobuf.Empty) returns (AlumnosResponse); //Metodo que no recibe ningun parametro en el request.
+}
+
+message CourseRequest{
+	int32 AlumnoId = 1;
+}
+
+message AlumnoResponse{
+	bool success = 1;
+	AlumnoGrpc alumno = 2;
+}
+
+message AlumnosResponse{
+	bool success = 1;
+	repeated AlumnoGrpc alumnos = 2;
+}
+
+message AlumnoGrpc{
+	int32 id = 1;
+	string name = 2;
+}
