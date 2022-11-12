@@ -10,7 +10,7 @@ service NetCoreCourseService {
 //Eso le permite ser mas rapido que REST
 message HelloRequest {
   string name = 1; //El numero es un ordinal
-  bool campoExtra = 2;
+  bool extraField = 2;
 }
 
 message HelloReply {
