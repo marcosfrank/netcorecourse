@@ -153,5 +153,24 @@ namespace NetCoreCourse.FirstExample.WebApp.Controllers
                     .FromSqlRaw($"GetCategories @Description", sqlParameter)
                     .ToList();
         }
+
+        [HttpGet("getasync")]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var list = await thingsContext.Categories.ToListAsync();
+            return Ok(list);
+        }
+
+        [HttpPost("postasync")]
+        public async Task<IActionResult> PostAsync([FromBody]Category category)
+        {
+            thingsContext.Categories.Add(category);
+            await thingsContext.SaveChangesAsync();
+            return Created($"/categories/{category.Id}",category);
+            //OJO no es buena practica que el mismo contexto se utilice en varios HILOS
+            //Recuerden que NO es thread-safe
+            //Pero utilizar async/await nos puede beneficiar cuando tenemos que hacer llamados a servicios externos
+            //O diferentes bases de datos o llamados a componentes cloud, etc etc.
+        }
     }
 }
