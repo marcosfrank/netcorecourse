@@ -1083,6 +1083,50 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "/api/categories/filtros",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Filter\":\"something\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:44382/api/webapi/categories/filtrado/Martin/Giacosa/Veamos/SiFUnciona",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44382",
+									"path": [
+										"api",
+										"webapi",
+										"categories",
+										"filtrado",
+										"Martin",
+										"Giacosa",
+										"Veamos",
+										"SiFUnciona"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1454,6 +1498,209 @@
 							"response": []
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "TPL",
+			"item": [
+				{
+					"name": "/tasksstatuses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7192/api/tasks/tasksstatuses",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7192",
+							"path": [
+								"api",
+								"tasks",
+								"tasksstatuses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/taskrun",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7192/api/tasks/taskrun",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7192",
+							"path": [
+								"api",
+								"tasks",
+								"taskrun"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/taskrun2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7192/api/tasks/taskrun2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7192",
+							"path": [
+								"api",
+								"tasks",
+								"taskrun2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/continuewith",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7192/api/tasks/continuewith",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7192",
+							"path": [
+								"api",
+								"tasks",
+								"continuewith"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/collections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7192/api/tasks/collections",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7192",
+							"path": [
+								"api",
+								"tasks",
+								"collections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/asyncawait",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7192/api/tasks/asyncawait",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7192",
+							"path": [
+								"api",
+								"tasks",
+								"asyncawait"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/httpclient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7192/api/tasks/httpclient",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7192",
+							"path": [
+								"api",
+								"tasks",
+								"httpclient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CATEGORIES con Context API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44382/api/categories/getasync",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"categories",
+								"getasync"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CATEGORIES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Nueva Categoria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44382/api/categories/postasync",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44382",
+							"path": [
+								"api",
+								"categories",
+								"postasync"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
