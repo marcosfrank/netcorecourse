@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.FirstExample.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.FirstExample.WebApp", "NetCoreCourse.FirstExample.WebApp\NetCoreCourse.FirstExample.WebApp.csproj", "{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.MvcApp", "NetCoreCourse.MvcApp\NetCoreCourse.MvcApp.csproj", "{AA3F8ED2-7C44-47A1-A6DF-34748B791FDB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.UnitTests", "NetCoreCourse.UnitTests\NetCoreCourse.UnitTests.csproj", "{76BF8863-A366-4032-81D1-19714E219EA4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.XUnitTests", "NetCoreCourse.XUnitTests\NetCoreCourse.XUnitTests.csproj", "{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}"
@@ -27,10 +25,6 @@ Global
 		{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA3F8ED2-7C44-47A1-A6DF-34748B791FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA3F8ED2-7C44-47A1-A6DF-34748B791FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA3F8ED2-7C44-47A1-A6DF-34748B791FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA3F8ED2-7C44-47A1-A6DF-34748B791FDB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
