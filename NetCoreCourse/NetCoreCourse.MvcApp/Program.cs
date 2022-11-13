@@ -1,4 +1,4 @@
-﻿using NetCoreCourse.MvcApp.Protos;
+using NetCoreCourse.MvcApp.Protos;
 using NetCoreCourse.MvcApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
