@@ -1,0 +1,56 @@
+﻿@model IEnumerable<NetCoreCourse.MvcApp.Models.AlumnoViewModel>
+
+@{
+    ViewData["Title"] = "Alumnos";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Crear</a>
+</p>
+<form asp-controller="Alumnos" asp-action="Index" method="get"> @*Ver el metodo utilizado*@
+    <p>
+        Nombre Completo Contiene: 
+        <input type="text" name="search" placeholder="Introduzca un filtro" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Ver Detalle</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@await Html.PartialAsync("_Parcial")

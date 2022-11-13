@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+
+option csharp_namespace = "NetCoreCourse.MvcApp.Protos"; //Indica el namespace de CSharp! 
+
+service NetCoreCourseService {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+//Es un contracto estricto respecto del orden
+//Eso le permite ser mas rapido que REST
+message HelloRequest {
+  string name = 1; //El numero es un ordinal
+  bool extraField = 2;
+}
+
+message HelloReply {
+  string message = 1;
+  bool success = 2;
+}
