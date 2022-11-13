@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IAlumnoService, AlumnoService>(); //Singleton solo para que queden los datos que agregamos en memoria.
 builder.Services.AddScoped<IDelayService, DelayService>();
+builder.Services.AddHttpClient();
 
 builder.Services.AddGrpc(opt => {
     opt.EnableDetailedErrors = true; //Esto nos permite tener errores detallados

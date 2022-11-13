@@ -8,14 +8,13 @@ namespace NetCoreCourse.MvcApp.Controllers.api
     [ApiController]
     public class TasksController : ControllerBase
     {
-        private readonly ILogger<TasksController> logger;
         private readonly IDelayService delayService;
+        private readonly HttpClient client; //HttpClient nos permite realizar llamadas Http. Recomiendo que revisen IHttpClientFactory que permite definir clientes con nombres deternados y configuración durante startup.
 
-        public TasksController(ILogger<TasksController> logger,
-                                IDelayService delayService)
+        public TasksController(IDelayService delayService, HttpClient client)
         {
-            this.logger = logger;
             this.delayService = delayService;
+            this.client = client;
         }
 
         
@@ -52,9 +51,9 @@ namespace NetCoreCourse.MvcApp.Controllers.api
         public IActionResult TaskRun()
         {
             Task tarea = Task.Run(() => {
-                logger.LogInformation("Comenzo");
+                Debug.WriteLine("Comenzo");
                 Thread.Sleep(5000);
-                logger.LogInformation("Finalizo");
+                Debug.WriteLine("Finalizo");
             });
             var primerEstado = tarea.Status.ToString();
 
@@ -142,11 +141,20 @@ namespace NetCoreCourse.MvcApp.Controllers.api
             Debug.WriteLine($"{message} - Fin");
         }
 
+        
+
         [HttpGet("asyncawait")]
         public async Task<IActionResult> AsyncAwait()//Ver async en la firma de este metodo.
         {
             var firstString = await delayService.Delay(1000); //ver await en este metodo
             return Ok(firstString); //Porque si devolvemos OK, estamos en un Task<IActionResult> 
+        }
+
+        [HttpGet("httpClient")]
+        public async Task<IActionResult> HttpClient()
+        {
+            var categories = await client.GetStringAsync("https://localhost:44382/api/webapi/categories"); //Llamando a nuestro otro proyecto? Interesante! 
+            return Ok(categories); 
         }
 
     }
