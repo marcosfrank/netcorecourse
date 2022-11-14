@@ -14,8 +14,6 @@ using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
-//Agregamos las paginas de Razor. Que son? Las vamos a ver en el modulo de MVC.
-builder.Services.AddRazorPages();
 
 builder.Services.AddControllers(options => {
     options.Filters.Add<NetCoreCourseFilter>();
@@ -96,8 +94,6 @@ if (app.Environment.IsEnvironment("MarcosDev"))
 
 //app.UseHttpsRedirection(); //Redirecciona cualquier request HTTP a HTTPS
 
-app.UseStaticFiles(); //img/logo.jpg
-
 app.UseRouting();
 
 //Modulo API - Middleware para utilizar Swagger
@@ -107,7 +103,6 @@ app.UseSwaggerUI();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapRazorPages();
 //Definicion de "Minimal API". Mas info en: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0
 app.MapGet("/api/firstapi", () => "Hey here is your first API!");
 

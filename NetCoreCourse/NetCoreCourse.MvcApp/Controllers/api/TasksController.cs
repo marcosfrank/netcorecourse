@@ -153,7 +153,8 @@ namespace NetCoreCourse.MvcApp.Controllers.api
         [HttpGet("httpClient")]
         public async Task<IActionResult> HttpClient()
         {
-            var categories = await client.GetStringAsync("https://localhost:44382/api/webapi/categories"); //Llamando a nuestro otro proyecto? Interesante! 
+            //A donde deberia estar esta URL?
+            var categories = await client.GetStringAsync("https://localhost:7232/api/webapi/categories"); //Llamando a nuestro otro proyecto? Interesante! 
             return Ok(categories); 
         }
 
