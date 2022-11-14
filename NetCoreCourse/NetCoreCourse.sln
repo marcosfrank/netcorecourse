@@ -5,13 +5,13 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.FirstExample.Console", "NetCoreCourse.FirstExample.Console\NetCoreCourse.FirstExample.Console.csproj", "{B344A021-CF6E-4E62-935F-8E50DFC24FB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.FirstExample.WebApp", "NetCoreCourse.FirstExample.WebApp\NetCoreCourse.FirstExample.WebApp.csproj", "{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.UnitTests", "NetCoreCourse.UnitTests\NetCoreCourse.UnitTests.csproj", "{76BF8863-A366-4032-81D1-19714E219EA4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.XUnitTests", "NetCoreCourse.XUnitTests\NetCoreCourse.XUnitTests.csproj", "{D70BC04D-206B-4B19-AC99-CFEC5D60C9ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreCourse.MvcApp", "NetCoreCourse.MvcApp\NetCoreCourse.MvcApp.csproj", "{2E9A0768-B0F3-46BD-9F65-7EA50B2EAC48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreCourse.MvcApp", "NetCoreCourse.MvcApp\NetCoreCourse.MvcApp.csproj", "{2E9A0768-B0F3-46BD-9F65-7EA50B2EAC48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreCourse.FirstExample.WebApp", "NetCoreCourse.FirstExample.WebApp\NetCoreCourse.FirstExample.WebApp.csproj", "{F1FB607C-EB94-49AC-B28D-55FD605A86F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{B344A021-CF6E-4E62-935F-8E50DFC24FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B344A021-CF6E-4E62-935F-8E50DFC24FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B344A021-CF6E-4E62-935F-8E50DFC24FB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EBA0E8B-D7F2-4828-A848-0E011F94FF44}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76BF8863-A366-4032-81D1-19714E219EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{2E9A0768-B0F3-46BD-9F65-7EA50B2EAC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E9A0768-B0F3-46BD-9F65-7EA50B2EAC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E9A0768-B0F3-46BD-9F65-7EA50B2EAC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1FB607C-EB94-49AC-B28D-55FD605A86F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1FB607C-EB94-49AC-B28D-55FD605A86F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1FB607C-EB94-49AC-B28D-55FD605A86F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1FB607C-EB94-49AC-B28D-55FD605A86F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

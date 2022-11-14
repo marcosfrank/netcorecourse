@@ -15,12 +15,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/example",
+							"raw": "https://localhost:7232/api/example",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"example"
@@ -35,12 +35,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/example/another",
+							"raw": "https://localhost:7232/api/example/another",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"example",
@@ -56,12 +56,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/log",
+							"raw": "https://localhost:7232/api/log",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"log"
@@ -76,12 +76,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/log?error=true",
+							"raw": "https://localhost:7232/api/log?error=true",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"log"
@@ -97,38 +97,17 @@
 					"response": []
 				},
 				{
-					"name": "/clients",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/log/clients",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
-							"path": [
-								"api",
-								"log",
-								"clients"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "/config",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/config",
+							"raw": "https://localhost:7232/api/config",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"config"
@@ -143,12 +122,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/services/forecast?city=rosario",
+							"raw": "https://localhost:7232/api/services/forecast?city=rosario",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"services",
@@ -170,12 +149,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/services/random",
+							"raw": "https://localhost:7232/api/services/random",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"services",
@@ -191,12 +170,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/generic/lists",
+							"raw": "https://localhost:7232/api/generic/lists",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"generic",
@@ -212,12 +191,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/generic/swap",
+							"raw": "https://localhost:7232/api/generic/swap",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"generic",
@@ -233,12 +212,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/generic/class",
+							"raw": "https://localhost:7232/api/generic/class",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"generic",
@@ -254,32 +233,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/extensionmethods",
+							"raw": "https://localhost:7232/api/extensionmethods",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
-							"path": [
-								"api",
-								"extensionmethods"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/extensionmethods FLUENT",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:44382/api/extensionmethods",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"extensionmethods"
@@ -294,12 +253,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/records",
+							"raw": "https://localhost:7232/api/records",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"records"
@@ -328,12 +287,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44382/api/categories",
+							"raw": "https://localhost:7232/api/categories",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories"
@@ -348,12 +307,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories",
+							"raw": "https://localhost:7232/api/categories",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories"
@@ -368,12 +327,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories/1",
+							"raw": "https://localhost:7232/api/categories/1",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -389,12 +348,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories/filters?description=oo",
+							"raw": "https://localhost:7232/api/categories/filters?description=oo",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -416,12 +375,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories/withItems",
+							"raw": "https://localhost:7232/api/categories/withItems",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -446,12 +405,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44382/api/categories/1",
+							"raw": "https://localhost:7232/api/categories/1",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -468,7 +427,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Description\": \"Grandpa's Hammer\",\r\n    \"CategoryId\": 2\r\n}",
+							"raw": "{\r\n    \"Description\": \"Grandpa's Hammer 2\",\r\n    \"CategoryId\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -476,12 +435,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44382/api/things",
+							"raw": "https://localhost:7232/api/things",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"things"
@@ -496,12 +455,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/things",
+							"raw": "https://localhost:7232/api/things",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"things"
@@ -516,12 +475,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories/withItems",
+							"raw": "https://localhost:7232/api/categories/withItems",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -546,16 +505,16 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44382/api/things/99",
+							"raw": "https://localhost:7232/api/things/5",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"things",
-								"99"
+								"5"
 							]
 						}
 					},
@@ -576,16 +535,16 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44382/api/categories/0",
+							"raw": "https://localhost:7232/api/categories/10",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
-								"0"
+								"10"
 							]
 						}
 					},
@@ -597,12 +556,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories/first",
+							"raw": "https://localhost:7232/api/categories/first",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -618,12 +577,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories/rawsql",
+							"raw": "https://localhost:7232/api/categories/rawsql",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -639,12 +598,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories/storedprocedure?description=Others",
+							"raw": "https://localhost:7232/api/categories/storedprocedure?description=Others",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -666,12 +625,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/unitofwork",
+							"raw": "https://localhost:7232/api/unitofwork",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"unitofwork"
@@ -703,12 +662,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories",
+									"raw": "https://localhost:7232/api/webapi/categories",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -733,12 +692,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/2",
+									"raw": "https://localhost:7232/api/webapi/categories/2",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -764,12 +723,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/1000",
+									"raw": "https://localhost:7232/api/webapi/categories/1000",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -786,12 +745,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories",
+									"raw": "https://localhost:7232/api/webapi/categories",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -807,12 +766,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories?page=1&pageSize=3&descriptionContains=Fish&orderBy=Description desc",
+									"raw": "https://localhost:7232/api/webapi/categories?page=1&pageSize=3&descriptionContains=Fish&orderBy=Description desc",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -846,12 +805,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories?page=1&pageSize=5&descriptionContains=Fish",
+									"raw": "https://localhost:7232/api/webapi/categories?page=1&pageSize=5&descriptionContains=Fish",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -886,12 +845,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories?orderBy=Description desc",
+									"raw": "https://localhost:7232/api/webapi/categories?orderBy=Description desc",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -928,12 +887,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/1",
+									"raw": "https://localhost:7232/api/webapi/categories/1",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -950,12 +909,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/1000",
+									"raw": "https://localhost:7232/api/webapi/categories/1000",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -972,12 +931,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/1",
+									"raw": "https://localhost:7232/api/webapi/categories/1",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -994,12 +953,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/error",
+									"raw": "https://localhost:7232/api/webapi/categories/error",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -1031,12 +990,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/validations",
+									"raw": "https://localhost:7232/api/webapi/categories/validations",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -1068,12 +1027,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/validations",
+									"raw": "https://localhost:7232/api/webapi/categories/validations",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -1108,12 +1067,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/webapi/categories/filtrado/Martin/Giacosa/Veamos/SiFUnciona",
+									"raw": "https://localhost:7232/api/webapi/categories/filtrado/Martin/Giacosa/Veamos/SiFUnciona",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"webapi",
@@ -1160,12 +1119,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/accounts/login",
+									"raw": "https://localhost:7232/api/accounts/login",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"accounts",
@@ -1200,12 +1159,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/secured/both",
+									"raw": "https://localhost:7232/api/secured/both",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"secured",
@@ -1245,12 +1204,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/secured/both",
+									"raw": "https://localhost:7232/api/secured/both",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"secured",
@@ -1290,12 +1249,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/secured/admin",
+									"raw": "https://localhost:7232/api/secured/admin",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"secured",
@@ -1332,12 +1291,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/accounts/login",
+									"raw": "https://localhost:7232/api/accounts/login",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"accounts",
@@ -1371,12 +1330,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/secured/both",
+									"raw": "https://localhost:7232/api/secured/both",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"secured",
@@ -1416,12 +1375,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/secured/admin",
+									"raw": "https://localhost:7232/api/secured/admin",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"secured",
@@ -1451,12 +1410,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/minimalapi",
+									"raw": "https://localhost:7232/api/minimalapi",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"minimalapi"
@@ -1483,12 +1442,12 @@
 									}
 								},
 								"url": {
-									"raw": "https://localhost:44382/api/firstapi",
+									"raw": "https://localhost:7232/api/firstapi",
 									"protocol": "https",
 									"host": [
 										"localhost"
 									],
-									"port": "44382",
+									"port": "7232",
 									"path": [
 										"api",
 										"firstapi"
@@ -1657,12 +1616,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44382/api/categories/getasync",
+							"raw": "https://localhost:7232/api/categories/getasync",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
@@ -1679,7 +1638,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"Nueva Categoria\"\r\n}",
+							"raw": "{\r\n    \"description\": \"Nueva Categoria2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1687,12 +1646,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44382/api/categories/postasync",
+							"raw": "https://localhost:7232/api/categories/postasync",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "44382",
+							"port": "7232",
 							"path": [
 								"api",
 								"categories",
